@@ -3,7 +3,7 @@ from .models import Post
 
 # Create your views here.
 def blogs(request):
-  blogs = Post.objects.all()
+  blogs = Post.objects.filter(status=1).order_by('-created_at')
   context = {'blogs': blogs}
   return render(request, 'post/blogs.html', context)
 
