@@ -1,1 +1,3 @@
-blogs go here
+{% for blog in blogs %}
+  <a href="{% url 'blog' blog.slug %}">{{ blog.title }}</a>
+{% endfor %}
