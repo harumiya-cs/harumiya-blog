@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     'main.apps.MainConfig',
     'post.apps.PostConfig',
+    'challenges.apps.ChallengesConfig',
+    
 ]
 
 MIDDLEWARE = [
