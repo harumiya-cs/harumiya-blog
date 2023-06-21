@@ -1,0 +1,16 @@
+<h1> {{ post.title }} </h1>
+<h6> {{ post.created_at }}</h6>
+{% if post.description %}
+  <p>
+    {{ post.description }}
+  </p>
+{% endif %}
+
+<h5><span>{{ post.category }}</span></h5>
+
+
+<div>
+  <p>
+    {{ post.content }}
+  </p>
+</div>
