@@ -1,13 +1,19 @@
-<div>
-  <h1>{{ challenge.title }}</h1>
-</div>
+{% extends 'main/base.html' %}
+{% block title %} blogs {% endblock %}
 
-<div>
-  <p>{{ challenge.description }}</p>
-</div>
+{% block content %}
+  <div>
+    <h1>{{ challenge.title }}</h1>
+  </div>
 
-<div>
-  <p>
-    {{ challenge.story }}
-  </p>
-</div>
+  <div>
+    <p>{{ challenge.description }}</p>
+  </div>
+
+  <div>
+    <p>
+      {{ challenge.story }}
+    </p>
+  </div>
+
+{% endblock %}

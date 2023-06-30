@@ -1,16 +1,25 @@
-<h1>Personal Challenges Log</h1>
+{% extends 'main/base.html' %}
+{% block title %} blogs {% endblock %}
 
-<p>
-  Hey there, this is where I post the challenges I'm doing and also kind of track them for myself hehe
-</p> 
+{% block content %}
 
-<p>
-  I had a great idea for what I wanted to do with this page but I couldn't quite implement it
-  so its gonna be a bit plain and blog-ish for some time and I will be working on this in the background. Very excited for this yay \./
-</p>
 
-<div>
-  {% for challenge in challenges %}
-    <a href="{% url 'challenge' challenge.slug %}">{{ challenge.title }}</a>
-  {% endfor %}
-</div>
+  <h1>Personal Challenges Log</h1>
+
+  <p>
+    Hey there, this is where I post the challenges I'm doing and also kind of track them for myself hehe
+  </p> 
+
+  <p>
+    I had a great idea for what I wanted to do with this page but I couldn't quite implement it
+    so its gonna be a bit plain and blog-ish for some time and I will be working on this in the background. Very excited for this yay \./
+  </p>
+
+  <div>
+    {% for challenge in challenges %}
+      <a href="{% url 'challenge' challenge.slug %}">{{ challenge.title }}</a>
+    {% endfor %}
+  </div>
+
+
+{% endblock %}
