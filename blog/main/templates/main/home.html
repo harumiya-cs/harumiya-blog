@@ -1,61 +1,109 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base.html' %} {% load static %}
 {% block title %} Home Page {% endblock title %}
 
 {% block content %}
 
-  {% load static %}
-  <img src="{% static 'main/harumiya_pfp.jpg' %}" alt="pfp">
-  
+<main class="px-2 py-3">
+  <div class="d-flex flex-column">
+    <section id="intro" class="px-1 py-2 mb-md-5">
+      <div class="container col-lg-9 ">
+        <h1 class="text-center my-4 mb-5">About me</h1>
+        <div class="d-flex align-items-start">
+          <div style="height: 22rem" class="d-md-block d-none me-5 mt-2 col-4">
+            <img
+              style="object-fit: cover; object-position: 50% 30%"
+              class="w-100 h-100"
+              src="{% static 'main/harumiya_pfp.jpg' %}"
+              alt="Sherzod pfp" />
+          </div>
+          <p class="fs-3">
+            Hey welcome to my blog :p I'm Sherzod Otajonov, or you might
+            know me as <span class="fw-semibold">Harumiya</span>. Im from Uzbekistan, currently living in 
+            Warsaw, Poland :) Go ahead and check out some of my 
+            <a href="{% url 'posts' %}" class="text-decoration-none">Blogs</a> 
+            or <a class="text-decoration-none disabled">Projects</a>. Or you can 
+            read a little more about me, my interests, and life experiences below &lt;3 
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- <div>
+      <img src="{% static 'main/harumiya_pfp.jpg' %}" alt="pfp">
+    </div>
+   -->
+    <!-- SPECIAL CHALLENGES LOG -->
 
-  <!-- SPECIAL CHALLENGES LOG -->
+    <section id="interests" class="px-2 py-4 bg-light">
+      <div class="container col-lg-8">
+        <h1 class="text-center mb-3">Passions & Interests</h1>
+        <div class="d-flex flex-column fs-4">
+          <p>
+            I'm quite enthusiastic about <span class="fw-semibold">Competative Programming(CP)</span> but I unfortunately haven't been able to
+            do any CP for almost a year. I do plan to get back into it slowly though(wish me luck :D).
+            Besides that I'm also interested in <span class="fw-semibold">Web-Dev</span> though I'm not a big fan of styling side of it, this
+            website is a proof lol. I have been meaning to explore some <span class="fw-semibold">AI/ML</span> stuff somewhere down the line as well 
+            but I currently have a lot to learn with higher priority that that.
+            Also some of the platforms I like to use for CP are
+            <a class="text-decoration-none" href="https://codeforces.com/" target="_blank">Codeforces</a> and
+            <a class="text-decoration-none" href="https://atcoder.jp/" target="_blank">Atcoder</a>
+          </p>
+          
+          <p>
+            Outside of these STEM stuff, I'm a music lover(I mostly listen to Pop ig idk). I almost always have
+            spotify playing on the background :p
+            Reading is a hobbie I picked up recently and it has been quite fun. I have been reading manga for a while 
+            now but was never really into nowels/books. Im primarily reading Young-Adult Rom-Fantasy.
+            Last book I started:
+            <img
+              style="display: block; object-fit: cover; object-position: 50% 30%"
+              class="w-75 h-75 m-2 mt-4"
+              src="{% static 'main/ugly_love.jpg' %}" 
+              alt="book im reading right now">
+          </p>
+
+        </div>
+      </div>
+    </section>
+    
+    <section id="interests" class="px-2 py-4 bg-light">
+      <div class="container col-lg-8">
+        <h1 class="text-center mb-3">So What's my deal?</h1>
+        <div class="d-flex flex-column fs-4">
 
 
-  <div>
-    <h1>Sherzod Otajonov</h1>
-    <p>
-      Hey welcome to my blog :p I'm Sherzod Otajonov, or you might know me as Harumiya.
-      I am currently a student at Vistula University, Warsaw. Go ahead and check out some of my 
-      <a href="">Blogs</a> or <a href="">Projects</a>. Or you can read a little more about me, my interests,
-      and experience below &lt;3
-    </p>
+          <p>
+            Well I'm 21 years old, currently living in Warsaw, Poland. I was supposed to graduate this spring
+            but I'm starting semester 5 this October. Why? Well covid-19 hit me harder than it did most. I went though a severe depression during which I lost interest
+            in everything including my studies. Having no one to talk to made it even more difficult and I was not
+            able to tell my parents about it either since they were not particularly happy about me choosing to study abroad so they 
+            would probably just blame that. I distenced myself from everyone to the point where I didnt even speak for weeks 
+            at all. I fortunately met some amazing people who helped me get through it all. I have since been trying
+            to better my relationship with my parents and friends, and overall trying to follow a healthy lifestyle.
+            This also reminds me of one quote thats stuck in my head:
+            <span style="display: block; " class="fw-semibold">
+              "An attitude change, even if it seems forced at first, does wonders."
+            </span>
+    
+            <img 
+              style="display: block;"
+              class="w-75 h-75 my-5 ms-3"
+              src="{% static 'main/EREN_FINALLY_FREE.jpg' %}" alt="eren finally free? panel">
+            
+            Regarding career, out of all the areas I have explored  so far I found Backend Engineering to be the career I can pursue and enjoy.
+            But I'm still very young and am willing to try out many more :)
+          </p>
+          
+          <p class="mt-4">
+            <span class="fw-semibold">Credits</span> <br>
+            website design was heavily inspired by the following websites: <br>
+            <a class="text-decoration-none" href="https://codetiger.me/" target="_blank">codetiger.me</a> &
+            <a class="text-decoration-none" href="https://azimjon.com/" target="_blank">azimjon.com</a> <br>
+            and was implemented by my friend: <br>
+            <a class="text-decoration-none" href="https://www.usmonbek.com/" target="_blank">Usmonbek</a>
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <div>
-    <h1>Passions</h1>
-    <p>
-      I'm quite enthusiastic about Competative Programming(CP) but I unfortunately haven't been able to
-      do any CP for almost a year. I do plan to get back into it slowly though(wish me luck :D).
-      Besides that I'm also interested in Web-dev though I'm not a big fan of styling side of it, this
-      website is a proof lol. I have been meaning to explore some AI/ML stuff somewhere down the line as well 
-      but I currently have a lot to learn with higher priority that that.
-
-      Outside of these STEM stuff, I'm a music lover(I mostly listen to Pop ig idk). I almost always have
-      spotify playing on the background :p
-      Reading is a hobbie I picked up recently and it has been quite fun. I had been reading manga for a while 
-      now but was never really into nowels/books. Im primarily reading Young-Adult Rom-Fantasy.
-      Last book I started:
-      
-      <img src="{% static 'main/ugly_love.jpg' %}" alt="book im reading right now">
-    </p>
-  </div>
-
-  <div>
-    <h1>So what's my deal?</h1>
-    <p>
-      Well I'm 21 years old, currently living in Warsaw, Poland. I was supposed to graduate this spring
-      but I'm starting semester 5 this October. Why? Well covid-19 hit me harder than it did most. I went though a severe depression during which I lost interest
-      in everything including my studies. Having no one to talk to made it even more difficult and I was not
-      able to tell my parents about it either since they were not particularly happy about me choosing to study abroad so they 
-      would probably just blame that. I distenced myself from everyone to the point where I didnt even speak for weeks 
-      at all. I fortunately met some amazing people who helped me get through it all. I have since been trying
-      to better my relationship with my parents and friends, and overall trying to follow a healthy lifestyle.
-      This also reminds me of one quote thats stuck in my head:
-      "An attitude change, even if it seems forced at first, does wonders."
-
-      <img src="{% static 'main/EREN_FINALLY_FREE.jpg' %}" alt="eren finally free? panel">
-      
-      Regarding career, out of all the areas I have explored  so far I found Backend Engineering to be the career I can pursue and enjoy.
-      But I still consider myself young and am willing to try out many more :)
-    </p>
-  </div>
+</main>
 {% endblock %}
