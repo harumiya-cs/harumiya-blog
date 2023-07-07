@@ -1,23 +1,25 @@
 {% extends 'main/base.html' %}
 {% block title %} {{post.title}} {% endblock %}
 
+
 {% block content %}
-
-  <h1> {{ post.title }} </h1>
-  <h6> {{ post.created_at }}</h6>
-  {% if post.description %}
-    <p>
-      {{ post.description }}
-    </p>
-  {% endif %}
-
-  <h5><span>{{ post.category }}</span></h5>
-
-
-  <div>
-    <p>
-      {{ post.content }}
-    </p>
+<main class="px-2 py-3">
+  <div class="container col-lg-7">
+    <div class="d-flex flex-column align-items-start">
+      <h1 class="display-5 fw-semibold">{{ post.title }}</h1>
+      <p class="text-secondary lead">{{ post.created_at }}</p>
+      <div class="badge bg-secondary fs-5 fw-semibold">{{ post.category }}</div>
+      
+      <div class="border-top border-2 fs-5 my-4 w-100">
+        {% if post.description %}
+          <p class="fst-italic fw-light mt-3">
+            {{ post.description }}
+          </p>
+        {% endif %}
+        <p class="mt-4">{{ post.content | safe }}</p>
+      </div>
+    </div>
   </div>
+</main>
 
 {% endblock %}
