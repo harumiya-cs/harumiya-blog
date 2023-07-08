@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ex(e0(yg7b*sgtbonj=v^*32-$5wi5+5-x*2tr)c(4_ycoeul7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,9 +43,9 @@ INSTALLED_APPS = [
     'post.apps.PostConfig',
     'challenges.apps.ChallengesConfig',
 
-
     'bootstrap5',
     
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -123,12 +124,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-#     "/var/www/static/",
-# ]
+AWS_ACCESS_KEY_ID = 'AKIAWPLIS5KX5AYPJXUD'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'harumiya-blog-bucket'
+# AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'main/static',
+]
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+# STATIC_URL = 'static/'
+# STATIC_ROOT = BASE_DIR / 'static'
 
 
 # Default primary key field type

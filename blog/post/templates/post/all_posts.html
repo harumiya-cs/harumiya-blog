@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base.html' %} {% load markdown_extras %}
 
 <!-- Blogs Main Page -->
 
@@ -26,7 +26,7 @@
             <div class="col-md-9 col-8 pe-3">
               <h2 class="fw-semibold fs-4">{{ post.title }}</h2>
               <p class="fs-5 text-truncate mb-2">
-                {{ post.description }} 
+                {{ post.description | markdown | safe}} 
               </p>
               <small class="lead fs-6">{{ post.created_at }}</small>
             </div>
