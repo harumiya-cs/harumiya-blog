@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base.html' %} {% load markdown_extras %}
 {% block title %} {{ challenge.title }} {% endblock %}
 
 
@@ -10,7 +10,7 @@
       <h1 class="display-5 fw-semibold">{{ challenge.title }}</h1>
       <p class="text-secondary lead">{{ challenge.created_at }}</p>
       <div class="border-top border-2 fs-5 my-4 w-100">
-        <p class="mt-4">{{ challenge.story | safe }}</p>
+        <p class="mt-4">{{ challenge.story | markdown | safe }}</p>
       </div>
     </div>
   </div>
