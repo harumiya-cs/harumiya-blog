@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %} {% load markdown_extras %} {% load static %}
+
+<!-- Blogs Main Page -->
+
+{% block title %} Projects {% endblock %}
+
+{% block content %}
+
+<!-- Projects Main Page -->
+<main class="px-2 py-3">
+  <div class="container col-lg-9">
+    <h1 class="display-6 text-center fw-semibold">
+      Here are some of projects i have done :)
+    </h1>
+
+    <div class="row g-4 my-5 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+      {% for project in projects %}
+      <div>
+        <div style="height: 10rem" class="card text-bg-dark p-0">
+          <img
+            style="object-fit: cover; object-position: 50% 20%"
+            class="card-img w-100 h-100 opacity-25"
+            src="{{ project.project_pic.url }}"
+            alt="{{project.title}}" />
+          <div
+            class="card-img-overlay fs-5 text-center d-flex flex-column justify-content-center">
+            <p class="card-text fw-semibold m-0">{{ project.title }}</p>
+            <a
+              href="{{project.project_live_link}}"
+              class="card-text stretched-link link-light text-decoration-none m-0">
+              link to project
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+{% endblock %}

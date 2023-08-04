@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'post.apps.PostConfig',
     'challenges.apps.ChallengesConfig',
+    'projects.apps.ProjectsConfig',
 
     'bootstrap5',
     
@@ -142,6 +143,8 @@ STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # DEFAULT_FILE_STORAGE = 'blog.storages.MediaStorage'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # STATIC_URL = 'static/'
 # STATIC_ROOT = BASE_DIR / 'static'
