@@ -17,6 +17,7 @@
             {{ post.description }}
           </p>
         {% endif %}
+        <h4>Word Count: {{ post.word_count }}</h4>
         <p class="mt-4">{{ post.content | markdown | safe }}</p>
       </div>
     </div>
